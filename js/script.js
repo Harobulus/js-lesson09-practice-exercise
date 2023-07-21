@@ -25,4 +25,27 @@ for (let exp of expenses) {
 
 // Write showMinMax function here
 
+const showMinMax = function (expenses) {
+
+  const min = Math.min(...expenses);
+  const max = Math.max(...expenses);
+
+  let listItemMin = document.createElement("li");
+  listItemMin.innerText = `Min: $ ${min}`;
+
+  let listItemMax = document.createElement("li");
+  listItemMax.innerText = `Max: $ ${max}`;
+
+  results.append(listItemMin);
+  results.append(listItemMax);
+ 
+
+  results.classList.remove("hide");
+};
+
 // Write click event listener for 'button' and call the showMinMax function
+
+button.addEventListener("click", function () {
+showMinMax(expenses);
+button.disabled = true;
+});
